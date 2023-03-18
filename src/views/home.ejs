@@ -1,0 +1,35 @@
+<div class="container mx-auto mt-5">
+    <div class="flex w-full justify-center">
+        <div class="max:w-8/12 overflow-auto">
+            <div class="my-2 px-2 relative flex justify-end">
+                <a href="/add-data" class="px-4 py-2 bg-[#6ccacb] hover:bg-[#46b5b7] duration-200 text-white rounded fixed">Re Fetch</a>
+            </div>
+            <table class="w-full mt-10">
+                <thead>
+                    <tr>
+                        <th class="px-4 py-2 text-start text-xl whitespace-nowrap" >#</th>
+                        <th class="px-4 py-2 text-start text-xl whitespace-nowrap" >Name</th>
+                        <th class="px-4 py-2 text-start text-xl whitespace-nowrap" >Last</th>
+                        <th class="px-4 py-2 text-start text-xl whitespace-nowrap" >Buy / Sell Price</th>
+                        <th class="px-4 py-2 text-start text-xl whitespace-nowrap" >Volume</th>
+                        <th class="px-4 py-2 text-start text-xl whitespace-nowrap" >Base_unit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% stocks.forEach((stock , i) => { %> 
+                        
+                        <tr>
+                            <td class="px-4 py-2 text-start text-lg whitespace-nowrap" ><%= i+1 %></td>
+                            <td class="px-4 py-2 text-start text-lg whitespace-nowrap" ><%= stock.name %></td>
+                            <td class="px-4 py-2 text-start text-lg whitespace-nowrap" ><%= stock.last %></td>
+                            <td class="px-4 py-2 text-start text-lg whitespace-nowrap" >₹ <%= stock.buy %> / ₹ <%= stock.sell %></td>
+                            <td class="px-4 py-2 text-start text-lg whitespace-nowrap" ><%= stock.volume %></td>
+                            <td class="px-4 py-2 text-start text-lg whitespace-nowrap" ><%= stock.base_unit %></td>
+                        </tr>
+
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
